@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tina - 健康信息与保密信息表单</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            border: 2px solid #ccc;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+			 font-weight: bold;
+        }
+        .container h2 {
+            position: absolute;
+            top: -20px;
+            left: 10px;
+            background-color: white;
+            padding: 0 10px;
+            font-size: 18px;
+            font-weight: normal;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input[type="text"], input[type="tel"], input[type="email"], textarea, select, input[type="file"] {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        textarea {
+            height: 100px;
+        }
+        .checkbox-group input {
+            margin-right: 10px;
+        }
+        .checkbox-group {
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .inline {
+            display: inline-block;
+            margin-right: 20px;
+        }
+        .inline select {
+            width: auto;
+        }
+        .file-upload {
+            padding: 5px;
+            width: auto;
+        }
+        .checkbox-inline input {
+            display: inline-block;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>基本信息</h2>
+        <form action="#">
+            <!-- 姓名 -->
+            <label for="name">1. 您的姓名：</label>
+            <input type="text" id="name" name="name" placeholder="请输入您的姓名" required>
+
+            <!-- 手机号 -->
+            <label for="phone">2. 您的手机号：</label>
+            <input type="tel" id="phone" name="phone" placeholder="请输入您的手机号" required>
+
+            <!-- 性别 -->
+            <label for="gender">3. 您的性别：</label>
+            <div class="checkbox-inline">
+                <input type="radio" id="male" name="gender" value="male" class="inline">
+                <label for="male">男</label>
+                <input type="radio" id="female" name="gender" value="female" class="inline">
+                <label for="female">女</label>
+            </div>
+
+            <!-- 家庭地址 -->
+            <label for="address">4. 家庭地址：</label>
+            <div class="checkbox-inline">
+                <select id="province" name="province" class="inline">
+                    <option value="">选择省</option>
+                    <option value="beijing">北京市</option>
+                    <option value="shanghai">上海市</option>
+                    <option value="guangdong">广东省</option>
+                    <!-- Add more provinces here -->
+                </select>
+                <select id="city" name="city" class="inline">
+                    <option value="">选择市/区</option>
+                    <option value="beijingCity">北京市市辖区</option>
+                    <option value="shanghaiCity">上海市市辖区</option>
+                    <option value="guangzhouCity">广州市</option>
+                    <!-- Add more cities here -->
+                </select>
+                <select id="county" name="county" class="inline">
+                    <option value="">选择县</option>
+                    <option value="county1">县1</option>
+                    <option value="county2">县2</option>
+                    <option value="county3">县3</option>
+                    <!-- Add more counties here -->
+                </select>
+                <select id="town" name="town" class="inline">
+                    <option value="">选择乡</option>
+                    <option value="town1">乡1</option>
+                    <option value="town2">乡2</option>
+                    <option value="town3">乡3</option>
+                    <!-- Add more towns here -->
+                </select>
+            </div>
+
+            <!-- 详细地址 -->
+            <label for="addressDetail">详细地址：</label>
+            <textarea id="addressDetail" name="addressDetail" placeholder="请输入详细地址" required></textarea>
+
+            <!-- 身体状况 -->
+            <label for="health">5. 您现在的身体状况：</label>
+            <div class="checkbox-group">
+                <input type="checkbox" id="healthy" name="health" value="healthy">
+                <label for="healthy">健康</label>
+                <input type="checkbox" id="fever" name="health" value="fever">
+                <label for="fever">发热</label>
+                <input type="checkbox" id="cough" name="health" value="cough">
+                <label for="cough">干咳</label>
+                <input type="checkbox" id="fatigue" name="health" value="fatigue">
+                <label for="fatigue">乏力</label>
+                <input type="checkbox" id="breathing" name="health" value="breathing">
+                <label for="breathing">呼吸困难</label>
+                <input type="checkbox" id="soreThroat" name="health" value="soreThroat">
+                <label for="soreThroat">咽痛</label>
+                <input type="checkbox" id="chestPain" name="health" value="chestPain">
+                <label for="chestPain">胸痛</label>
+                <input type="checkbox" id="musclePain" name="health" value="musclePain">
+                <label for="musclePain">肌肉酸痛/关节痛</label>
+                <input type="checkbox" id="vomiting" name="health" value="vomiting">
+                <label for="vomiting">呕吐</label>
+                <input type="checkbox" id="diarrhea" name="health" value="diarrhea">
+                <label for="diarrhea">腹泻</label>
+                <input type="checkbox" id="tasteLoss" name="health" value="tasteLoss">
+                <label for="tasteLoss">味觉异常</label>
+                <input type="checkbox" id="smellLoss" name="health" value="smellLoss">
+                <label for="smellLoss">嗅觉异常</label>
+            </div>
+
+            <!-- 健康码颜色 -->
+            <label for="healthCodeColor">6. 您的健康码颜色目前是：</label>
+            <div class="checkbox-inline">
+                <input type="checkbox" id="green" name="healthCodeColor" value="green" class="inline">
+                <label for="green">绿色</label>
+                <input type="checkbox" id="yellow" name="healthCodeColor" value="yellow" class="inline">
+                <label for="yellow">黄色</label>
+                <input type="checkbox" id="red" name="healthCodeColor" value="red" class="inline">
+                <label for="red">红色</label>
+            </div>
+
+            <!-- 旅行史 -->
+            <label for="travelHistory">7. 您是否在14天内有过中高风险地区旅行史，或与确诊人员有较为密切的接触：</label>
+            <div class="checkbox-inline">
+                <input type="checkbox" id="yes" name="travelHistory" value="yes" class="inline">
+                <label for="yes">是</label>
+                <input type="checkbox" id="no" name="travelHistory" value="no" class="inline">
+                <label for="no">否</label>
+            </div>
+
+            <!-- 疫苗接种情况 -->
+            <label for="vaccine">8. 疫苗接种情况：</label>
+            <div class="checkbox-inline">
+                <input type="checkbox" id="oneShot" name="vaccine" value="oneShot" class="inline">
+                <label for="oneShot">已接种一针</label>
+                <input type="checkbox" id="twoShots" name="vaccine" value="twoShots" class="inline">
+                <label for="twoShots">已接种两针</label>
+                <input type="checkbox" id="threeShots" name="vaccine" value="threeShots" class="inline">
+                <label for="threeShots">已接种三针</label>
+            </div>
+
+
+
+        </form>
+    </div>
+
+    <div class="container">
+        <h2>保密信息</h2>
+        <form action="#">
+            <!-- 身份证信息 -->
+            <label for="idCard">1. 身份证信息：</label>
+            <input type="file" id="idCard" name="idCard" class="file-upload" required>
+            <input type="file" id="idCardBack" name="idCardBack" class="file-upload" required>
+
+            <!-- 学历信息 -->
+            <label for="education">2. 学历信息（最高）：</label>
+            <select id="education" name="education">
+                <option value="">选择学历</option>
+                <option value="highSchool">高中</option>
+                <option value="bachelor">本科</option>
+                <option value="master">硕士</option>
+                <option value="doctorate">博士</option>
+            </select>
+			
+            <!-- 是否服兵役 -->
+            <label for="militaryService">3. 是否服兵役：</label>
+            <div class="checkbox-inline">
+                <input type="checkbox" id="militaryYes" name="militaryService" value="yes" class="inline">
+                <label for="militaryYes">是</label>
+                <input type="checkbox" id="militaryNo" name="militaryService" value="no" class="inline">
+                <label for="militaryNo">否</label>
+            </div>			
+
+            <!-- 个人意见 -->
+            <label for="feedback">4. 个人意见：</label>
+            <textarea id="feedback" name="feedback" placeholder="请输入您的个人意见" required></textarea>
+
+            <button type="submit">提交</button>
+        </form>
+    </div>
+
+</body>
+</html>
